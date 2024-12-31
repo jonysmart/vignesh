@@ -1,0 +1,10 @@
+select * from superstore;
+select product_name,sales,profit from superstore where profit>100;
+select customer_name,sum(sales) as total_sales from superstore group by customer_name order by total_sales;
+select distinct city,region from superstore where region='south';
+select count(*) as discounted_orders from superstore where discount >0;
+select region,category,sum(sales) as total_sales from superstore group by region,category order by region,total_sales desc;
+select state,sum(quantity)as total_quantity from superstore group by state order by total_quantity desc;
+select product_name,sum(profit) as total_profit from superstore group by product_name order by total_profit desc;
+select customer_name from superstore group by  customer_name having count(order_id)>20;
+select sub_category,avg(discount) as avg_discount from superstore group by sub_category;
